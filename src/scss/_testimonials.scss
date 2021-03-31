@@ -1,0 +1,128 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.testimonials-grid {
+  margin: 0 auto;
+  max-width: 73rem;
+
+  @include breakpoint-up('medium') {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+    grid-template-areas:
+    "a a b"
+    "c d d"
+    "e e e"
+  }
+
+  @include breakpoint-up('large') {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+    "a a b e"
+    "c d d e"
+  }
+}
+
+.testimonial {
+  border-radius: $border-radius;
+  padding: 2rem;
+  box-shadow: $box-shadow;
+  margin-bottom: 1.4rem;
+
+  @include breakpoint-up('medium') {
+    margin-bottom: 0;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  &__person-details {
+    margin-left: 1.2rem;
+  }
+
+  &__name {
+    font-size: 1rem;
+  }
+
+  &__text {
+    line-height: 1.2;
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &:nth-child(1) {
+    background-color: $violet;
+    grid-area: a;
+  }
+
+  &:nth-child(2) {
+    background-color: $grey-2;
+    grid-area: b;
+  }
+
+  &:nth-child(3) {
+    grid-area: c;
+  }
+
+  &:nth-child(4) {
+    background-color: $grey-1;
+    grid-area: d;
+  }
+
+  &:nth-child(5) {
+    grid-area: e;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(4) {
+    color: $white;
+
+    .testimonial__status {
+      color: rgba($white, .5);
+    }
+
+    .testimonial__quote {
+      color: rgba($white, .7);
+    }
+
+  }
+
+  &:nth-child(1),
+  &:nth-child(4) {
+    .testimonial__image {
+      border: .25rem solid lighten($color: $violet, $amount: 20%);
+    }
+  }
+
+  &:nth-child(3),
+  &:nth-child(5)  {
+    background-color: $white;
+    color: $grey-2;
+
+    .testimonial__status {
+      color: rgba($grey-2, .5);
+    }
+
+    .testimonial__quote {
+      color: rgba($grey-2, .7);
+    }
+
+  }
+
+
+  &__image {
+    border-radius: 50%;
+  }
+}
+
+.attribution {
+  font-size: .6875rem;
+  text-align: center;
+  color: hsl(228, 45%, 44%);
+  padding: 1rem;
+}
