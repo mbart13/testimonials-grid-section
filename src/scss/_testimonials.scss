@@ -2,8 +2,7 @@
 @use 'mixins' as *;
 
 .testimonials-grid {
-  margin: 0 auto;
-  max-width: 73rem;
+  max-width: $max-width;
 
   @include breakpoint-up('medium') {
     display: grid;
