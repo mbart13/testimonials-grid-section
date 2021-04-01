@@ -4,7 +4,7 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
 
 ![](./screenshot.png)
 
-### You can see live preview [here](https://testimonials-grid-section-mbart13.vercel.app)
+You can see live preview [here](https://testimonials-grid-section-mbart13.vercel.app)
 
 
 ### Built with
